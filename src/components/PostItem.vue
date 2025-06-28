@@ -1,7 +1,10 @@
 <template>
   <div class="post">
-    <strong>{{ post.title }}</strong>
-    {{ post.body }}
+    <div>
+      <strong>{{ post.title }}</strong>
+      {{ post.body }}
+    </div>
+    <MyButton class="delete-btn">Удалить</MyButton>
   </div>
 </template>
 
@@ -12,7 +15,7 @@
         type: Object,
         requared: true,
       }
-    }
+    },
   }
 </script>
 
@@ -20,6 +23,12 @@
  .post {
     padding: 15px;
     border: 2px solid teal;
-    margin-top: 15px;
+    display: flex;
+    margin-top: 15px;;
+    align-items: center;
+ }
+
+ .delete-btn {
+  margin-left: auto;
  }
 </style>

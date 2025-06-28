@@ -14,7 +14,12 @@
         placeholder="Описание"
         v-model="post.body"
       >
-      <button class="btn" @click="createPost">Создать</button>
+       <MyButton 
+        class="create-btn" 
+        @click="createPost"
+      >
+        Создать
+       </MyButton>
     </form>
   </div>
 </template>
@@ -53,13 +58,9 @@
     display: flex;
     flex-direction: column;
   }
-  .btn {
-    align-self: flex-end;
+  .create-btn {
     margin-top: 15px;
-    padding: 10px 15px;
-    background: none;
-    color: teal;
-    border: 1px solid teal;
-    cursor: pointer;
+    align-self: flex-end;
   }
+
 </style>

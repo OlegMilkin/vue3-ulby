@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import PostItem from '@/components/PostItem.vue';
+  import PostItem from '@/components/PostItem.vue'; 
 
   export default {
     props: {
