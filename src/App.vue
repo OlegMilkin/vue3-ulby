@@ -1,39 +1,20 @@
-<script>
-  import PostForm from '@/components/PostForm.vue';
-  import PostList from '@/components/PostList.vue';
+<template>
+  <div>
+    <navbar></navbar>
+    <RouterView />
+  </div>
+</template>
 
+<script>
+  import Navbar from '@/components/Navbar.vue';
   export default {
-    data() {
-      return {
-        posts: [
-          {id: 1, title: 'JavaScript', body: 'Oписание поста'},
-          {id: 2, title: 'JavaScript 2', body: 'Oписание поста 2'},
-          {id: 3, title: 'JavaScript 3', body: 'Oписание поста 3'},
-        ],
-      }
-    },
     components: {
-      PostForm,
-      PostList,
-    },
-    methods: {
-      createPost(post) {
-        this.posts = [...this.posts, post];
-      }
+      Navbar
     }
   }
 </script>
-  
-<template>
-  <div class="app">
-    <PostForm @create="createPost" />
-    <PostList 
-      :posts="posts"
-    />
-  </div>  
-</template>
 
-<style>
+<style scoped>
  * {
   margin: 0;
   padding: 0;
@@ -43,4 +24,5 @@
  .app {
   padding: 20px;
  }
+
 </style>

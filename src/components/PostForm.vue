@@ -2,18 +2,15 @@
   <div>
     <strong>Cоздание поста</strong>
     <form class="form" @submit.prevent>
-      <input 
-        class="input" 
-        type="text" 
+      <MyInput
+        v-focus 
         placeholder="Название"
         v-model="post.title"
-      >
-      <input 
-        class="input" 
-        type="text" 
+      />
+      <MyInput 
         placeholder="Описание"
         v-model="post.body"
-      >
+      />
        <MyButton 
         class="create-btn" 
         @click="createPost"
@@ -35,7 +32,7 @@
       }
     },
     methods: {
-      createPost() {
+      createPost() {  
         this.post.id = Date.now();
         this.$emit('create', this.post)
         this.post = {
@@ -48,12 +45,6 @@
 </script>
 
 <style>
-  .input {
-    width: 100%;
-    border: 1px solid teal;
-    padding: 10px 15px;
-    margin-top: 15px;
-  }
   .form {
     display: flex;
     flex-direction: column;

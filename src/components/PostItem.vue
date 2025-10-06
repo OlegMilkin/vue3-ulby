@@ -4,7 +4,18 @@
       <strong>{{ post.title }}</strong>
       {{ post.body }}
     </div>
-    <MyButton class="delete-btn">Удалить</MyButton>
+    <MyButton 
+      class="delete-btn"
+      @click="$router.push(`/posts/${post.id}`)"
+    >
+      Открыть
+    </MyButton>
+    <MyButton 
+      class="delete-btn"
+      @click="$emit('remove', post)"
+    >
+      Удалить
+    </MyButton>
   </div>
 </template>
 
